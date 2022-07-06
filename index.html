@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car mooving</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wholescene {
+        width: 100%;
+        height: 100vh;
+        background: url(./sky.jpg) no-repeat center;
+        position: relative;
+        overflow: hidden;
+      }
+      .road {
+        position: absolute;
+        bottom: 0px;
+        background: url(./road.jpg) no-repeat center;
+        /* background-size: cover; */
+        /* background-size: contain; */
+        width: 300%;
+        height: 30vh;
+        /* overflow: hidden; */
+        animation: Road 2s infinite linear;
+      }
+      @keyframes Road {
+        100% {
+          transform: translateX(-60%);
+        }
+      }
+      .city {
+        position: absolute;
+        width: 150%;
+        left: 0%;
+        top: 20vh;
+        height: 50vh;
+        background: url(./city.png) no-repeat center;
+        background-size: cover;
+        z-index: 111;
+        animation: City 2s linear infinite;
+      }
+      @keyframes City {
+        100% {
+          transform: translateX(-20%);
+        }
+      }
+      /* Car */
+      .Car
+      {
+        position: relative;
+        /* top: 70vh; */
+        top: 54%;
+
+        left: 33%;
+       transform: translateX(-90%);
+        z-index: 10000000;
+        background: url(./car.png) no-repeat center;
+        height: 300px;
+        background-size: contain;
+        width: 40vw;
+        display: flex;
+        justify-content: space-between;
+        animation: Caar 0.2s infinite linear ;
+        /* background-color: orange; */
+        /* background-color: orangered; */
+      }
+     @keyframes Caar {
+        100%{
+            transform: translateY(2px);
+        }
+     
+        0%{
+            transform: translateY(0px);
+        }
+     }
+.wheels
+{
+   background: url(./wheel.png) no-repeat center;
+   background-size: contain;
+   height: 100px;
+   width: 50px;
+  
+   margin: 130px 28px;
+   animation: Wheels 2s  infinite linear;
+   
+}
+@keyframes Wheels {
+    100%{
+        transform: Rotate(360deg);
+    }
+    
+}
+.right
+{
+    margin-right: 38px;
+}
+
+
+
+/* MEdia Query */
+@media only screen and (min-width: 1000px) {
+  .wheels{
+    height: 200px;
+   width: 100px;
+  
+   margin: 110px 57px;
+  }
+  .right{
+    margin-right: 73px;
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="wholescene">
+      <div class="city"></div>
+      <div class="road"></div>
+     
+
+          <div class="Car">
+        <div class="wheels"></div>
+        <div class="wheels right"></div>
+        
+   
+        
+      </div>
+    </div>
+  </body>
+</html>
